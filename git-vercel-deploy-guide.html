@@ -1030,19 +1030,10 @@ git config --global user.email</pre>
         <h3>&#128295; 실습: 자기소개 페이지 만들기</h3>
 
         <div class="step">Step 1</div>
-        <p><strong>index.txt 파일 만들기</strong></p>
-        <ol>
-            <li><strong>C:\my-profile</strong> 폴더 열기</li>
-            <li>폴더 빈 곳에서 <strong>우클릭</strong> &rarr; 새로 만들기 &rarr; 텍스트 문서</li>
-            <li>파일 이름을 <strong>index.txt</strong> 로 저장 (지금은 .txt 그대로 둡니다)</li>
-            <li>index.txt <strong>우클릭</strong> &rarr; 연결 프로그램 &rarr; <strong>메모장</strong></li>
-        </ol>
-
-        <div class="step">Step 2</div>
-        <p><strong>코드 복사-붙여넣기</strong> &mdash; 아래 코드 전체를 복사해서 메모장에 붙여넣고 저장(Ctrl+S)</p>
+        <p><strong>아래 코드 전체를 복사하세요</strong> &mdash; 복사 버튼을 클릭하면 됩니다.</p>
 
         <div class="code-block">
-            <div class="label">index.txt &mdash; 전체 코드 (복사 버튼 클릭!)</div>
+            <div class="label">자기소개 페이지 &mdash; 기본 코드 (복사 버튼 클릭!)</div>
             <pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
@@ -1110,7 +1101,7 @@ git config --global user.email</pre>
             <button class="copy-btn" onclick="copyCode(this)">&#128203; 복사</button>
         </div>
 
-        <div class="step">Step 3</div>
+        <div class="step">Step 2</div>
         <p><strong>AI로 내 정보에 맞게 수정하기</strong></p>
         <p>ChatGPT 또는 Claude에 접속해서, 아래 프롬프트를 복사-붙여넣기 하세요:</p>
 
@@ -1127,14 +1118,25 @@ avatar 안의 글자는 내 성(姓) 한 글자로 바꿔줘.
 - 이메일: (여기에 이메일, 없으면 삭제)
 
 [HTML 코드]
-(여기에 위의 index.txt 전체 코드를 붙여넣기)</pre>
+(여기에 Step 1에서 복사한 코드를 붙여넣기)</pre>
             <button class="copy-btn" onclick="copyCode(this)">&#128203; 복사</button>
         </div>
 
-        <p><strong>수정 방법:</strong></p>
+        <div class="box box-tip">
+            <div class="icon">&#9989;</div>
+            <div>AI가 수정해준 코드를 <strong>전체 복사</strong>해두세요. 다음 단계에서 바로 씁니다.</div>
+        </div>
+
+        <hr>
+
+        <div class="step">Step 3</div>
+        <p><strong>index.txt 파일 만들고 수정된 코드 붙여넣기</strong></p>
         <ol>
-            <li>AI가 수정해준 코드를 <strong>전체 복사</strong></li>
-            <li>메모장(index.txt)에서 <strong>전체 선택(Ctrl+A)</strong> &rarr; 붙여넣기(Ctrl+V)</li>
+            <li><strong>C:\my-profile</strong> 폴더 열기</li>
+            <li>폴더 빈 곳에서 <strong>우클릭</strong> &rarr; 새로 만들기 &rarr; 텍스트 문서</li>
+            <li>파일 이름을 <strong>index.txt</strong> 로 저장 (지금은 .txt 그대로 둡니다)</li>
+            <li>index.txt <strong>우클릭</strong> &rarr; 연결 프로그램 &rarr; <strong>메모장</strong></li>
+            <li>메모장에서 <strong>전체 선택(Ctrl+A)</strong> &rarr; AI가 수정해준 코드 <strong>붙여넣기(Ctrl+V)</strong></li>
             <li><strong>저장 (Ctrl+S)</strong></li>
         </ol>
 
@@ -1142,7 +1144,7 @@ avatar 안의 글자는 내 성(姓) 한 글자로 바꿔줘.
 
         <div class="step">Step 4</div>
         <p><strong>index.txt &rarr; index.html 로 이름 변경</strong></p>
-        <p>내용 수정이 끝났으면 이제 확장자를 바꿉니다.</p>
+        <p>내용 저장이 끝났으면 이제 확장자를 바꿉니다.</p>
 
         <div class="box box-danger">
             <div class="icon">&#9889;</div>
