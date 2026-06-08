@@ -964,32 +964,12 @@ git config --global user.email</pre>
             <li>명령 프롬프트(Windows) 또는 터미널(Mac)을 열고:</li>
         </ol>
 
-        <p>먼저 <strong>바탕화면으로 이동</strong>해야 합니다. 아래 두 가지 방법 중 편한 것을 선택하세요.</p>
+        <p>먼저 <strong>C 드라이브로 이동</strong>합니다.</p>
 
-        <div class="box box-tip">
-            <div class="icon">&#11088;</div>
-            <div>
-                <strong>권장 방법 &mdash; 바탕화면에서 터미널 직접 열기</strong><br>
-                바탕화면 <strong>빈 곳에서 우클릭</strong> &rarr; <strong>"터미널에서 열기"</strong> (Windows 11)<br>
-                또는 <strong>"Git Bash Here"</strong> 클릭 &rarr; 바로 Desktop 위치에서 시작!<br>
-                이 방법이 되면 아래 <code>cd Desktop</code> 입력 불필요합니다.
-            </div>
-        </div>
-
-        <p>우클릭 메뉴가 안 보이면 터미널에서 직접 입력:</p>
         <div class="code-block">
-            <div class="label">Windows (영문 바탕화면)</div>
-            <pre>cd Desktop</pre>
+            <div class="label">Windows</div>
+            <pre>cd C:\</pre>
             <button class="copy-btn" onclick="copyCode(this)">&#128203; 복사</button>
-        </div>
-
-        <div class="box box-warning">
-            <div class="icon">&#9888;&#65039;</div>
-            <div>
-                안 될 때 순서대로 시도:<br>
-                1. <code>cd 바탕화면</code> &nbsp; (한글 Windows)<br>
-                2. <code>cd $HOME\Desktop</code> &nbsp; (OneDrive 연동 PC)
-            </div>
         </div>
 
         <p>복사한 주소를 붙여넣기:</p>
@@ -1000,13 +980,13 @@ git config --global user.email</pre>
         </div>
 
         <div class="step">Step 3</div>
-        <p>바탕화면에 <strong>my-profile</strong> 폴더가 보이는지 확인!</p>
+        <p><strong>C:\</strong> 에 <strong>my-profile</strong> 폴더가 보이는지 확인!</p>
 
         <h4>&#9888;&#65039; 잘 안 될 때</h4>
         <table class="trouble">
             <tr><th>증상</th><th>해결 방법</th></tr>
             <tr><td>"git clone" 에러</td><td>HTTPS 주소 확인 (끝이 <code>.git</code>으로 끝나야 함)</td></tr>
-            <tr><td>폴더가 안 보임</td><td><code>cd Desktop</code> 대신 <code>cd 바탕화면</code>으로 시도</td></tr>
+            <tr><td>폴더가 안 보임</td><td><code>dir C:\</code> 입력 후 my-profile 폴더 확인</td></tr>
             <tr><td>로그인 창이 뜸</td><td>브라우저 로그인 창이 뜨면 GitHub 계정으로 로그인 &mdash; 계정 <strong>비밀번호가 아닌</strong> 브라우저 인증 방식입니다</td></tr>
         </table>
 
@@ -1052,7 +1032,7 @@ git config --global user.email</pre>
         <div class="step">Step 1</div>
         <p><strong>index.html 파일 만들기</strong></p>
         <ol>
-            <li>바탕화면의 <strong>my-profile</strong> 폴더 열기</li>
+            <li><strong>C:\my-profile</strong> 폴더 열기</li>
             <li>폴더 빈 곳에서 <strong>우클릭</strong> &rarr; 새로 만들기 &rarr; 텍스트 문서</li>
         </ol>
 
@@ -1220,9 +1200,9 @@ avatar 안의 글자는 내 성(姓) 한 글자로 바꿔줘.
             <pre>cd my-profile</pre>
             <button class="copy-btn" onclick="copyCode(this)">&#128203; 복사</button>
         </div>
-        <div class="box box-warning">
-            <div class="icon">&#9888;&#65039;</div>
-            <div>한글 Windows: <code>cd 바탕화면/my-profile</code></div>
+        <div class="box box-tip">
+            <div class="icon">&#128161;</div>
+            <div>C 드라이브에서 clone 했으므로 <code>cd C:\my-profile</code> 도 동일하게 작동합니다.</div>
         </div>
 
         <p>명령어 3줄을 하나씩 실행:</p>
@@ -1610,7 +1590,7 @@ VSCode        ──┼──▶  GitHub 저장소 (my-profile)  ──▶  Verc
         <ol>
             <li>VSCode 실행</li>
             <li>메뉴 <strong>File &rarr; Open Folder</strong></li>
-            <li>바탕화면의 <strong>my-profile</strong> 폴더 선택 &rarr; 열기</li>
+            <li><strong>C:\my-profile</strong> 폴더 선택 &rarr; 열기</li>
             <li>왼쪽 탐색기에 index.html이 보이면 성공!</li>
         </ol>
 
