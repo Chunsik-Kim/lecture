@@ -456,23 +456,70 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 8px 12px;
+            padding: 8px 14px;
             cursor: pointer;
             font-size: 20px;
             box-shadow: var(--shadow);
+            line-height: 1;
         }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 99;
+        }
+        .sidebar-overlay.show { display: block; }
 
         @media (max-width: 900px) {
             .menu-toggle { display: block; }
+
             .sidebar {
                 transform: translateX(-100%);
-                transition: transform 0.3s;
+                transition: transform 0.3s ease;
                 box-shadow: var(--shadow-lg);
             }
             .sidebar.open { transform: translateX(0); }
-            .main { margin-left: 0; padding: 24px 20px 60px; }
-            .hero { padding: 32px 24px; }
-            .hero h1 { font-size: 24px; }
+
+            .main {
+                margin-left: 0;
+                padding: 68px 16px 60px;
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 22px;
+                scroll-margin-top: 68px;
+            }
+            h3 { font-size: 17px; }
+
+            .hero { padding: 28px 18px; }
+            .hero h1 { font-size: 22px; }
+            .hero p { font-size: 15px; }
+            .hero .meta { gap: 8px; }
+            .hero .meta span { font-size: 12px; padding: 4px 12px; }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .code-block pre { font-size: 13px; padding: 14px 16px; }
+            .code-block .label { font-size: 11px; padding: 3px 10px; }
+            .copy-btn { padding: 5px 10px; font-size: 11px; }
+
+            .box { padding: 12px 14px; font-size: 13px; }
+            .step { font-size: 12px; }
+
+            .tool-cards { grid-template-columns: 1fr; }
+            .ref-banner { padding: 28px 18px; }
+            .ref-banner h3 { font-size: 19px; }
+            .before-after { grid-template-columns: 1fr; }
+
+            .checkpoint .options { gap: 12px; }
+            .checkpoint .opt { font-size: 13px; padding: 7px 14px; }
         }
 
         /* ── Scrollbar ── */
@@ -614,11 +661,20 @@
         }
         .tool-card h4 { margin: 0 0 8px; font-size: 18px; color: var(--text); }
         .tool-card .tc-desc { font-size: 14px; margin: 0 0 12px; }
-        @media (max-width: 900px) {
-            .tool-cards { grid-template-columns: 1fr; }
-            .ref-banner { padding: 28px 24px; }
-            .ref-banner h3 { font-size: 20px; }
-            .before-after { grid-template-columns: 1fr; }
+        @media (max-width: 480px) {
+            .main { padding: 68px 12px 60px; }
+            .hero { padding: 22px 14px; }
+            .hero h1 { font-size: 18px; line-height: 1.35; }
+            .hero p { font-size: 14px; }
+            h2 { font-size: 19px; }
+            h3 { font-size: 15px; }
+            h4 { font-size: 13px; }
+            p, li { font-size: 14px; }
+            td, th { padding: 10px 12px; font-size: 13px; }
+            .code-block pre { font-size: 12px; padding: 12px 13px; }
+            .level-card .lc-badge { width: 44px; height: 44px; font-size: 20px; }
+            .level-card .lc-title { font-size: 15px; }
+            .level-card .lc-sub { font-size: 12px; }
         }
 
         /* ── Level Cards ── */
@@ -666,7 +722,8 @@
 </head>
 <body>
 
-<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776;</button>
+<button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <div class="layout">
     <!-- Sidebar -->
@@ -1894,12 +1951,22 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 모바일 사이드바 닫기
-navLinks.forEach(a => {
-    a.addEventListener('click', () => {
-        document.querySelector('.sidebar').classList.remove('open');
-    });
+// 모바일 사이드바 열기/닫기
+const menuToggle = document.getElementById('menuToggle');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const sidebarEl = document.querySelector('.sidebar');
+
+function closeSidebar() {
+    sidebarEl.classList.remove('open');
+    sidebarOverlay.classList.remove('show');
+}
+
+menuToggle.addEventListener('click', () => {
+    sidebarEl.classList.toggle('open');
+    sidebarOverlay.classList.toggle('show');
 });
+sidebarOverlay.addEventListener('click', closeSidebar);
+navLinks.forEach(a => a.addEventListener('click', closeSidebar));
 </script>
 
 </body>
